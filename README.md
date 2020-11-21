@@ -9,14 +9,14 @@
 容器的建置流程如下所述：
 
 ```
-$ Docker build .
+$ docker build .
 ```
 該指令透過 Dockerfile 去建立一個 image，「.」代表 Dockerfile 所在路徑，執行完成會得到一個 image_id
 
 ---
 
 ```
-$ Docker run {image_id}
+$ docker run {image_id}
 ```
 透過 image_id 去啟動一個容器，但如果想透過瀏覽器連接該容器內的 Web Server，則需使用下方指令去 mapping #port 
 該指令執行完就會看到我們的 node 已成功運行一個 Web Server 了
@@ -24,7 +24,7 @@ $ Docker run {image_id}
 ---
 
 ```
-$ Docker run -p {browser #port}:{Container #port} {image_id}
+$ docker run -p {browser #port}:{Container #port} {image_id}
 ```
 為了能讓瀏覽器可以連接上容器內的 Web Server，要記得 mapping #port  
 此時就能開啟瀏覽器網址 localhost:9000，便能看到「Hello Docker and Node!」 在畫面上囉！
@@ -33,7 +33,7 @@ $ Docker run -p {browser #port}:{Container #port} {image_id}
 其他相關 Docker 指令參考如下
 
 ```
-$ Docker run -it {image_id} sh
+$ docker run -it {image_id} sh
 ```
 此指令可以會透過 image_id 去啟一個容器，sh 參數會在此容器內開起 terminal，同時允許對其輸入 linux commands，範例指令如下
     
@@ -51,27 +51,27 @@ $ Docker run -it {image_id} sh
 ---
 
 ```
-$ Docker logs {Container_id}
+$ docker logs {Container_id}
 ```
 此指令可以查看 Container 曾經在 terminal 印出的內容，如上方linux commands： # ls 得出的結果
 
 ---
 
 ```
-$ Docker ps
+$ docker ps
 ```
 此指令可以查看目前正在運行 Container 的相關資料
 
 ---
 
 ```
-$ Docker ps -a
+$ docker ps -a
 ```
 此指令可以查看曾建立過的 Container 的相關資料
 
 ---
 
 ```
-$ Docker system prune
+$ docker system prune
 ```
 此指令可以刪除所有 image and Container
