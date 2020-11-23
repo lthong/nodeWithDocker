@@ -5,8 +5,7 @@
 每個商店就像是一個個的軟體應用或服務，讓整個宇宙的居民可以快樂的生活在一起，究竟 Docker 是如何建立這些服務呢?讓我們一起來趟學習之旅吧～
 
 ### 第一章
-當 build 完本例的 Dockerfile 後便會建立一個容器，該容器包含一個 node 環境，並透過該環境建立了一個簡易的 Web Server，
-容器的建置流程如下所述：
+當 build 完本例的 Dockerfile 後便會建立一個 image，run 那個 image 後會得到一個 container，該 container 會包含一個 node 環境，並透過該環境建立了一個簡易的 Web Server，容器的建置流程如下所述：
 
 ```
 $ docker build .
